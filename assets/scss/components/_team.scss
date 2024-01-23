@@ -1,0 +1,44 @@
+.team {
+    background-color: $white-clr;
+    .container {
+        @include mq(tablet-small) {
+            display: flex;
+        }
+    }
+    .team-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6rem 1.8rem;
+        @include mq(tablet-small, max) {
+            gap: 0;
+        }
+        .slick-track {
+            @include mq(tablet-small, max) {
+                margin-left: calc(-10% - 0.5rem);
+            }
+        }
+        .loop-team {
+            @include mq(tablet-small, max) {
+                margin-inline-end: 1rem;    
+            }
+            &__modal {
+                @include mq(tablet-small, max) {
+                    display: none;
+                }
+            }
+        }
+    }
+    .team-mobile {
+        position: absolute;
+        right: 2500px;
+        top: 0;
+        @include mq(tablet-small) {
+            display: none;
+        }
+        .loop-team__modal {
+            @include mq(tablet-small) {
+                display: none;
+            }
+        }
+    }
+}

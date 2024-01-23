@@ -1,0 +1,132 @@
+body {
+    .facetwp {
+      &-facet {
+        margin-bottom: 0;
+        &-search {
+          .facetwp-input-wrap {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 68rem;
+            i {
+              display: none;
+            }
+          }
+        }
+      }
+      &-facet {
+        .facetwp-display-value {
+          padding-right: 0 !important;
+        }
+      }
+      &-search {
+        display: block;
+        width: 100%;
+        appearance: none;
+        padding: 1.4rem 4rem 1.4rem 0;
+        background-color: transparent;
+        @include svg-background('<svg width="37" height="8" viewBox="0 0 37 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M36.3536 4.35356C36.5488 4.15829 36.5488 3.84171 36.3536 3.64645L33.1716 0.464469C32.9763 0.269207 32.6597 0.269207 32.4645 0.464469C32.2692 0.659731 32.2692 0.976314 32.4645 1.17158L35.2929 4L32.4645 6.82843C32.2692 7.02369 32.2692 7.34027 32.4645 7.53554C32.6597 7.7308 32.9763 7.7308 33.1716 7.53554L36.3536 4.35356ZM-4.37114e-08 4.5L36 4.5L36 3.5L4.37114e-08 3.5L-4.37114e-08 4.5Z" fill="%230C2340"/></svg>');
+        background-position: center right;
+        border: none;
+        border-bottom: 1px solid $black-clr;
+        outline: none;
+        font: 400 1.6rem/1.3 $f-text;
+        transition: all .3s ease-in-out;
+        &::placeholder {
+          color: $gray-clr;
+        }
+        &:focus,
+        &:active {
+          border-bottom-color: $light-green-clr;
+        }
+      }
+      &-checkbox {
+        margin-bottom: 0.8rem;
+        padding: 1rem;
+        width: fit-content;
+        font-size: 1rem;
+        border-radius: 2rem;
+        letter-spacing: 0.1rem;
+        text-transform: uppercase;
+        border: 1px solid $gray-clr;
+        color: #4d4d4d;
+        cursor: pointer;
+        transition: 0.3s;
+        background-image: none !important;
+        &.checked {
+          border-color: $light-green-clr;
+          background-color: $light-green-clr;
+          color: #003b36;
+        }
+        &:hover {
+          background-color: $white-clr !important;
+          color: $black-clr !important;
+          border-color: $light-green-clr !important;
+        }
+      }
+      &-type-radio {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      &-radio {
+        margin: 2px;
+        @extend .btn;
+        // @extend .btn-outline;
+        background-image: none !important;
+        &.checked,
+        &:hover {
+          background-color: $white-clr !important;
+          color: $black-clr !important;
+          border-color: $light-green-clr !important;
+        }
+      }
+      &-counter {
+        display: none;
+      }
+      &-pager {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      &-page {
+        margin: 0 8px;
+        padding: 0;
+        font: 400 1.6rem/1.1 $f-heading;
+        color: $gray-clr;
+        &.active {
+          color: $black-clr;
+        }
+      }
+      &-reset {
+        position: relative;
+        display: inline-block;
+        padding: 8px 1rem 8px 3rem;
+        appearance: none;
+        border: none;
+        background-color: transparent;
+        font: 400 1.2rem $f-text;
+        letter-spacing: 0.24px;
+        color: $black-clr;
+        text-transform: uppercase;
+        &::before {
+          position: absolute;
+          content: '';
+          top: 50%;
+          left: 1rem;
+          width: 13px;
+          height: 13px;
+          transform: translateY(-50%);
+          @include svg-background('<svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.46536 10.7913L2.70703 10.033L5.74036 6.99967L2.70703 3.96634L3.46536 3.20801L6.4987 6.24134L9.53203 3.20801L10.2904 3.96634L7.25703 6.99967L10.2904 10.033L9.53203 10.7913L6.4987 7.75801L3.46536 10.7913Z" fill="%230C2340"/></svg>');
+        }
+        &:hover {
+          background-color: $black-clr;
+          color: $white-clr;
+          &::before {
+            @include svg-background('<svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.46536 10.7913L2.70703 10.033L5.74036 6.99967L2.70703 3.96634L3.46536 3.20801L6.4987 6.24134L9.53203 3.20801L10.2904 3.96634L7.25703 6.99967L10.2904 10.033L9.53203 10.7913L6.4987 7.75801L3.46536 10.7913Z" fill="%23fff"/></svg>');
+          }
+        }
+      }
+    }
+  }

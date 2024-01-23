@@ -1,0 +1,59 @@
+.privacy {
+    padding: 15.6rem 0 15rem;
+    background-color: $white-clr;
+    .container {
+        display: flex;
+    }
+    @include mq(tablet-small) {
+        padding: 20rem 0 27rem;
+    }
+    &-title {
+        margin-bottom: 2rem;
+        @include mq(tablet-small) {
+            margin-bottom: 4rem;
+        }
+    }
+    &-content {
+        max-width: 66.6rem;
+        h6 {
+            margin-bottom: 4rem;
+            font-size: 1.2rem;
+            line-height: 2rem;
+            font-weight: 500;
+            color: $black-clr;
+            @include mq(tablet-small) {
+                margin-bottom: 10rem;
+            }
+        }
+        p {
+            margin-bottom: 3rem;
+            color: $black-clr;
+        }
+        h3 {
+            margin-block: 3rem 3.2rem;
+            font-size: 2rem;
+            line-height: 2.6rem;
+            color: $black-clr;
+            @include mq(tablet-small) {
+                line-height: 3.12rem;
+                font-size: 2.4rem;
+            }
+        }
+        li {
+            margin-bottom: 3rem;
+            margin-left: 2rem;
+            font-size: 1.6rem;
+            line-height: 2.5rem;   
+            color: $black-clr;
+        }
+    }
+    .cky-banner-element {
+        margin: 30px 0;
+        color: $white-clr;
+        cursor: pointer;
+        &::before {
+            width: calc(100% + 1.8rem);
+            height: calc(100% + 3.2rem);
+        }
+    }
+}

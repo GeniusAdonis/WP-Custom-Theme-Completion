@@ -1,0 +1,78 @@
+.statistics {
+    display: flex;
+    background-color: $white-clr;
+    @include mq(tablet-small) {
+        padding-top: 18rem;
+        padding-bottom: 18rem;
+    }
+    @include mq(tablet-small, max) {
+        padding-top: 7rem;
+    }
+    .container {
+        display: flex;
+        align-items: center;
+        margin: auto;
+        width: 100%;
+        align-items: flex-start;
+        @include mq(tablet-small, max) {
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+    }
+    &-intro {
+        margin-bottom: 6rem;
+    }
+    &-title {
+        margin-top: 3rem;
+    }
+    &-item {
+        position: relative;
+        width: fit-content;
+        @include mq(tablet-small, max) {
+            margin-bottom: 2rem;
+        }
+        &__title {
+            text-transform: uppercase;
+            white-space: nowrap;
+            margin-left: 0.6rem;
+            @include mq(tablet-small) {
+                display: none;
+                position: absolute;
+                margin-left: 0;
+                padding: 0.8rem 1.6rem;
+                border-radius: 2rem;
+                letter-spacing: 0.14rem;
+            }
+        }
+        &__number {
+        }
+        &:nth-child(1) {
+            .statistics-item__title {
+                @include mq(tablet-small) {
+                    background-color: $light-blue-clr;
+                }
+            }
+        }
+        &:nth-child(2) {
+            .statistics-item__title {
+                @include mq(tablet-small) {
+                    background-color: $blue-clr;
+                    color: $white-clr;
+                }
+            }
+        }
+        &:nth-child(3) {
+            .statistics-item__title {
+                @include mq(tablet-small) {
+                    background-color: rgb(189, 226, 255);
+                }
+            }
+        }
+        &:hover {
+            .statistics-item__title {
+                display: block;
+            }
+        }
+    }
+}

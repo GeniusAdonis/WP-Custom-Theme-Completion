@@ -1,0 +1,107 @@
+.error404 {
+    background-color: $black-clr;
+    .footer {
+        background-color: $black-clr;
+        &-info {
+            &__address {
+                &__item {
+                    color: $gray-clr;
+                }
+            }
+            &__phone, &__email {
+                color: $gray-clr;
+            }
+            &__social_and_logo {
+                filter: invert(1);
+            }
+        }
+        &-menu {
+            a {
+                color: $gray-clr;
+            }
+            &__main {
+                .menu-item {
+                }
+            }
+            &__extra {
+                &__item {
+                    &::before {
+                        border-color: $gray-clr;
+                    }
+                }
+            }
+        }
+    }
+}
+.error-404 {
+    padding: 16rem 0 22rem;
+    @include mq(tablet-small) {
+        padding: 18rem 0 27rem;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    &__heading {
+        margin-bottom: 1rem;
+        color: $white-clr;
+        letter-spacing: -0.3rem;
+    }
+    &__sub_heading {
+        margin-bottom: 1.8rem;
+        color: $white-clr;
+        white-space: nowrap;
+        @include mq(tablet-small) {
+            margin-bottom: 2rem;
+        }
+    }
+    &__description {
+        margin-bottom: 4rem;
+        color: $gray-clr;
+        text-align: center;
+    }
+    &__menu {
+        .nav__menu {
+            list-style: none;
+            @include mq(tablet-small) {
+                display: flex;
+            }
+            .menu-item {
+                padding: 1.6rem 0;
+                text-align: center;
+                @include mq(tablet-small) {
+                    margin-right: 4rem;
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+            a {
+                position: relative;
+                font-size: 1.2rem;
+                font-family: $f-heading;
+                font-weight: 400;
+                line-height: 1.2rem;
+                color: $gray-clr;
+                text-transform: uppercase;
+                &::after {
+                    position: absolute;
+                    content: '';
+                    top: calc(100% + 1px);
+                    left: 0;
+                    width: 0;
+                    height: 1px;
+                    background-color: $white-clr;
+                    transition: 0.3s;
+                }
+                &:hover {
+                    &::after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,142 @@
+.services {
+    display: flex;
+    background-color: $white-clr;
+    padding-bottom: 12rem;
+    padding-top: 12rem;
+    @include mq(tablet-small) {
+        padding-bottom: 18rem;
+        padding-top: 22rem;
+    }
+    @include when-inside('.page-template-home') {
+        // padding-top: 10rem;
+    }
+    .container {
+        display: flex;
+        align-items: center;
+        margin: auto;
+        width: 100%;
+        align-items: flex-start;
+        @include mq(tablet-small, max) {
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+    }
+    &-content {
+        width: 100%;
+    }
+    &-accordion {
+        &__item {
+            display: block;
+            padding-top: 2.8rem;
+            padding-bottom: 2.8rem;
+            border-top: 1px solid rgba($gray-clr, 0.7);
+            border-bottom: 1px solid rgba($gray-clr, 0.7);
+            transition: 0.3s;
+            margin-bottom: -1px;
+            @include mq(tablet-small) {
+                padding-top: 3.6rem;
+                padding-bottom: 3.6rem;
+            }
+            &:last-child {
+                border-bottom: 1px solid rgba($gray-clr, 0.7);
+                @include when-inside('.services--career') {
+                    border-bottom: 1px solid rgba($gray-clr, 0.7);
+                }
+            }
+            &:first-child {
+                border-top: 1px solid rgba($gray-clr, 0.7);
+                @include when-inside('.services--career') {
+                    border-top: 1px solid rgba($gray-clr, 0.7);
+                }
+            }
+            &__title {
+                position: relative;
+                display: block;
+                font-weight: 400;
+                cursor: pointer;
+                color: $black-clr;
+                @include mq(tablet-small, max) {
+                    padding-right: 6rem;
+                }
+                &:after {
+                    position: absolute;
+                    content: '';
+                    top: 50%;
+                    right: 2.2rem;
+                    width: 2.1rem;
+                    height: 1.6rem;
+                    transform: translate(-50%, -50%);
+                    transition: 0.5s;
+                    @include svg-background("%3Csvg width='21' height='16' viewBox='0 0 21 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.784 0L20.8 7.38138V8.61862L13.784 16L12.64 14.7964L17.456 9.72962L18.368 9.04787L18.28 8.73645L17.168 8.8627L0 8.8627L0 7.1373L17.16 7.1373L18.272 7.26355L18.36 6.95213L17.448 6.27038L12.64 1.20358L13.784 0Z' fill='%230D0D0D'/%3E%3C/svg%3E");
+                    @include mq(tablet-small) {
+                        right: 12rem;
+                    }
+                    @include when-inside('.services--career') {
+                        transform: translate(-50%, -50%) rotate(-45deg);
+                    }
+                }
+                &:hover::after {
+                    right: 10rem;
+                }
+            }
+            &__description {
+                display: none;
+                margin-top: 2rem;
+            }
+            &:hover {
+                position: relative;
+                border-color: rgba($light-blue-clr, 0.8);
+                z-index: 100;
+                @include when-inside('.services--career') {
+                    border-block: 1px solid #0d0d0d !important;
+                }
+            }
+            &:nth-child(1) {
+                &:hover {
+                    border-top-color: rgba($light-blue-clr, 0.8);
+                }
+            }
+            &:nth-child(2) {
+                &:hover {
+                    border-color: rgba($light-green-clr, 0.8);
+                }
+            }
+            &:nth-child(3) {
+                &:hover {
+                    border-color: rgba($light-yellow-clr, 0.8);
+                }
+            }
+            &:nth-child(4) {
+                &:hover {
+                    border-color: rgba($light-yellow-clr, 0.8);
+                }
+            }
+            &:nth-child(5) {
+                &:hover {
+                    border-color: rgba($light-rose-clr, 0.8);
+                }
+            }
+        }
+    }
+    &-content {
+        &__cta {
+            margin-top: 8.8rem;
+            @include mq(tablet-small) {
+                display: none;
+            }
+        }
+    }
+    &-warnning {
+        @include mq(tablet-small) {
+            font-size: 2.4rem;
+            line-height: 3.6rem;
+        }
+    }
+    &--career {
+        padding-bottom: 30rem;
+        @include mq(tablet-small, max) {
+            padding-bottom: 18rem;
+        }
+    }
+}

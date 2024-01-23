@@ -1,0 +1,395 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding-block: 2.6rem;
+  width: 100%;
+  z-index: 1000;
+  transition: 0.45s;
+  transition-delay: 0.4s;
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  &-logo {
+    z-index: 1000;
+    transition-delay: 0.3s;
+    filter: invert(1);
+    @include when-inside('.page-template-home') {
+      filter: invert(0);
+    }
+    @include when-inside('.error404') {
+      filter: invert(0);
+    }
+    @include when-inside('.page-template-news') {
+      filter: invert(0);
+    }
+  }
+  &-nav {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: -100vh;
+    background-color: $blue-clr;
+    transition: 0.5s;
+    transition-delay: 0.2s;
+    z-index: 100;
+    @include mq(tablet-small, max) {
+      top: -1000px;
+      padding-top: 14rem;
+      padding-bottom: 5.2rem;
+      overflow-y: scroll;
+      display: block;
+    }
+    &.style--blue {
+      background-color: $blue-clr;
+    }
+    &.style--green {
+      background-color: $green-clr;
+    }
+    &.style--rose {
+      background-color: $rose-clr;
+    }
+    &.style--white {
+      background-color: $white-clr;
+    }
+    @include when-inside('.error404') {
+      background-color: $white-clr;
+    }
+    .container {
+      @include mq(tablet-small, max) {
+        flex-direction: column-reverse;
+      }
+      @include mq(tablet-small) {
+        margin-top: 5rem;
+      }
+    }
+    &.active {
+      top: 0;
+    }
+    &__logo {
+      position: absolute;
+      top: 3.2rem;
+      left: 2.4rem;
+      @include mq(tablet-small) {
+        top: 2.6rem;
+        left: 3.6rem;
+      }
+      @include mq(desktop-wide) {
+        left: calc((100vw - 1440px) / 2 + 3.6rem);
+      }
+      @include when-inside('.style--white') {
+        filter: invert(1);
+      }
+      @include when-inside('.error404') {
+        filter: invert(1);
+      }
+    }
+    &__info {
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      @include mq(tablet-small) {
+        margin-right: 4rem;
+        width: 50%;
+      }
+      &__address {
+        max-width: 180px;
+        @include mq(tablet-small, max) {
+          display: none;
+        }
+        &__item {
+          display: block;
+          margin-bottom: 3rem;
+          color: $gray-light-clr;
+          @include when-inside('.style--white') {
+            color: $black-clr;
+          }
+          @include when-inside('.error404') {
+            color: $black-clr;
+          }
+          span {
+            display: block;
+            font-weight: 700;
+          }
+        }
+      }
+      &__email {
+        color: $gray-light-clr;
+        @include when-inside('.style--white') {
+          color: $black-clr;
+        }
+        @include when-inside('.error404') {
+          color: $black-clr;
+        }
+      }
+      &__phone {
+        color: $gray-light-clr;
+        @include when-inside('.style--white') {
+          color: $black-clr;
+        }
+        @include when-inside('.error404') {
+          color: $black-clr;
+        }
+        @include mq(tablet-small, max) {
+          margin-bottom: 1rem;
+        }
+      }
+      &__social {
+          display: flex;
+          margin-top: auto;
+          list-style: none;
+          margin-top: 4rem;
+          @include mq(tablet-small) {
+            margin-top: 6.4rem;
+          }
+          @include mq(tablet-small) {
+            margin-right: 6rem;
+          }
+          &__item {
+            margin-right: 2.4rem;
+            filter: invert(1);
+            @include when-inside('.style--white') {
+              filter: invert(0);
+            }
+            @include when-inside('.error404') {
+              filter: invert(0);
+            }
+          }
+      }
+    }
+    &__menus {
+      width: 50%;
+      @include mq(tablet-small, max) {
+        margin-bottom: 7rem;
+        width: 100%;
+      }
+      ul {
+        list-style: none;
+      }
+      a {
+          font-family: $f-text;
+          font-size: 1.2rem;
+          line-height: 1.2rem;
+          color: $gray-light-clr;
+          text-transform: uppercase;
+          letter-spacing: 0.14rem;
+          @include when-inside('.style--white') {
+            color: $black-clr;
+          }
+          @include when-inside('.error404') {
+            color: $black-clr;
+          }
+          @include mq(tablet-small) {
+            font-size: 1.6rem;
+            line-height: 1.6rem;
+          }
+      }
+    }
+    &__menu {
+      @include mq(tablet-small, min) {
+        margin-bottom: 8.6rem;
+      }
+      .menu-item {
+          margin-bottom: 2rem;
+          padding-block: 1.6rem;
+          border-top: 1px solid $light-blue-clr;
+          transition: 0.3s;
+          @include when-inside('.style--blue') {
+            border-top: 1px solid $light-blue-clr;
+          }
+          @include when-inside('.style--green') {
+            border-top: 1px solid $light-green-clr;
+          }
+          @include when-inside('.style--rose') {
+            border-top: 1px solid $light-rose-clr;
+          }
+          @include when-inside('.style--white') {
+            border-top: 1px solid $black-clr;
+          }
+          @include when-inside('.error404') {
+            border-top: 1px solid $black-clr;
+          }
+          @include mq(tablet-small) {
+            margin-bottom: 2.8rem;
+          }
+          &:hover {
+            border-top: 1px solid $gray-light-clr;
+            @include when-inside('.style--white') {
+              border-top: 1px solid $light-blue-clr;
+            }
+            @include when-inside('.error404') {
+              border-top: 1px solid $light-blue-clr;
+            }
+          }
+      }
+    }
+    &__extra {
+      @include mq(tablet-small) {
+        display: flex;
+      }
+      &__item {
+        position: relative;
+        margin-bottom: 2rem;
+        padding-block: 1.6rem;
+        transition: 0.3s;
+        @include mq(tablet-small, max) {
+          border-top: 1px solid $light-blue-clr;
+          @include when-inside('.style--blue') {
+            border-top: 1px solid $light-blue-clr;
+          }
+          @include when-inside('.style--green') {
+            border-top: 1px solid $light-green-clr;
+          }
+          @include when-inside('.style--rose') {
+            border-top: 1px solid $light-rose-clr;
+          }
+          @include when-inside('.style--white') {
+            border-top: 1px solid $black-clr;
+          }
+          @include when-inside('.error404') {
+            border-top: 1px solid $black-clr;
+          }
+          &:hover {
+            border-top: 1px solid $gray-light-clr;
+            @include when-inside('.style--white') {
+              border-top: 1px solid $light-blue-clr;
+            }
+            @include when-inside('.error404') {
+              border-top: 1px solid $light-blue-clr;
+            }
+          }
+        }
+        @include mq(tablet-small) {
+          margin-right: 4rem;
+          margin-bottom: 2.8rem;
+        }
+        @include mq(tablet-small) {
+          &::before {
+            position: absolute;
+            content: '';
+            left: 0;
+            bottom: 0.8rem;
+            width: 0;
+            opacity: 0;
+            transition: 0.3s;
+            border-top: 1px solid $gray-light-clr;
+            @include when-inside('.style--white') {
+              border-top: 1px solid $black-clr;
+            }
+            @include when-inside('.error404') {
+              border-top: 1px solid $black-clr;
+            }
+          }
+          &:hover {
+            &::before {
+              width: 100%;
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+    &__close {
+      position: absolute;
+      right: 4rem;
+      top: 4.6rem;
+      width: 2.6rem;
+      border: 1px solid $white-clr;
+      transform: rotate(45deg);
+      cursor: pointer;
+      @include mq(tablet-small, max) {
+        right: 2rem;
+        top: 5rem;
+      }
+      @include mq(desktop-wide) {
+        left: calc(1440px + (100vw - 1440px) / 2 - 6rem);
+      }
+      @include when-inside('.style--white') {
+        border: 1px solid $black-clr;
+      }
+      @include when-inside('.error404') {
+        border: 1px solid $black-clr;
+      }
+
+      &::before {
+        position: absolute;
+        content: '';
+        width: 2.4rem;
+        height: 2.4rem;
+        border-radius: 50%;
+        background-color: transparent;
+      }
+      &::after {
+        position: absolute;
+        content: '';
+        right: 0;
+        top: -0.1rem;
+        width: 2.5rem;
+        border: 1px solid $white-clr;
+        transform: rotate(-90deg);
+        @include when-inside('.style--white') {
+          border: 1px solid $black-clr;
+        }
+        @include when-inside('.error404') {
+          border: 1px solid $black-clr;
+        }
+      }
+    }
+  }
+  &--sticky {
+    background-color: #FDFFFC;
+    @include when-inside('.page-template-news') {
+      background-color: #0D0D0D;
+    }
+    &::before {
+      position: absolute;
+      content: '';
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+    }
+    .header-logo {
+      @include when-inside('.page-template-news') {
+        filter: invert(0);
+      }
+      @include when-inside('.page-template-home') {
+        filter: invert(1);
+      }
+      @include when-inside('.error404') {
+        filter: invert(0);
+      }
+    }
+
+    .hamburger {
+      @include when-inside('.page-template-home') {
+        background-color: $blue-clr;
+        span {
+          background: $white-clr;
+          &::before, &::after {
+            background: $white-clr;
+          }
+        }
+      }
+    }
+  }
+  &.active {
+    .header-logo {
+      filter: invert(0);
+      @include when-inside('.page-template-home') {
+        filter: invert(0);
+      }
+      @include when-inside('.page-template-news') {
+        filter: invert(1);
+      }
+    }
+  }
+}

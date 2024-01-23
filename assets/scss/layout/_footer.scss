@@ -1,0 +1,244 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+
+.footer {
+    padding-bottom: 2.4rem;
+    background-color: $white-clr;
+    @include mq(tablet-small) {
+        padding-bottom: 6rem;
+    }
+    .container {
+        display: flex;
+        justify-content: space-between;
+        @include mq(tablet-small, max) {
+            flex-direction: column-reverse;
+        }
+    }
+    &-info {
+        display: flex;
+        flex-direction: column;
+        @include mq(tablet-small) {
+            margin-right: 4rem;
+        }
+        @include mq(tablet-small, max) {
+            width: 50%;
+        }
+        &__address {
+            @include mq(tablet-small) {
+                margin-bottom: 2rem;
+            }
+            &__item {
+                display: block;
+                color: $black-clr;
+                span {
+                    font-weight: 700;
+                    @include mq(tablet-small, max) {
+                        display: block;
+                    }
+                }
+                @include mq(tablet-small, max) {
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+        &__social_and_logo {
+            margin-top: auto;
+            @include mq(tablet-small) {
+                display: flex;
+                align-items: flex-end;
+            }
+            
+        }
+        &__social {
+            display: flex;
+            list-style: none;
+            @include mq(tablet-small, max) {
+                margin-top: 4rem;
+                margin-bottom: 4rem;
+            }
+            @include mq(tablet-small) {
+                margin-right: 6rem;
+            }
+            &__item {
+                margin-right: 2.4rem;
+            }
+        }
+        &__menu {
+            margin-top: 4rem;
+            list-style: none;
+            @include mq(tablet-small) {
+                display: none;
+            }
+            &__item {
+                @include mq(tablet-small, max) {
+                    margin-bottom: 2.4rem;
+                }
+                @include mq(tablet-small) {
+                    margin-right: 3rem;
+                }
+                a, h6 {
+                    font-size: 1rem;
+                    font-family: $f-text;
+                    font-size: 1.2rem;
+                    line-height: 1.2rem;
+                    color: $black-clr;
+                    text-transform: uppercase;
+                    letter-spacing: 0.14rem;
+                    font-weight: 400;
+                    @include when-inside('.page-template-news') {
+                        color: $gray-clr;
+                    }
+                    @include when-inside('.error404') {
+                        color: $gray-clr;
+                    }
+                }
+            }
+            &__copyright {
+                @include when-inside('.page-template-news') {
+                    color: $gray-clr;
+                }
+                @include when-inside('.error404') {
+                    color: $gray-clr;
+                }
+            }
+        }
+        &__email, &__phone {
+            color: $black-clr;
+        }
+    }
+    &-logo {
+        @include mq(tablet-small) {
+            display: flex;
+            transform: translateY(4px);
+        }
+        &__item {
+            display: block;
+            margin-right: 2rem;
+            @include mq(tablet-small, max) {
+                margin-bottom: 2rem;
+            }
+        }
+    }
+
+    &-menu {
+        @include mq(tablet-small, max) {
+            margin-bottom: 3.4rem;
+        }
+        ul {
+            list-style: none;
+        }
+        a {
+            font-family: $f-text;
+            font-size: 1.2rem;
+            line-height: 1.2rem;
+            color: $black-clr;
+            text-transform: uppercase;
+            letter-spacing: 0.14rem;
+        }
+        &__main {
+            .menu-item {
+                margin-bottom: 1.6rem;
+                padding-top: 1.6rem;
+                padding-bottom: 1.6rem;
+                border-top: 1px solid $black-clr;
+                transition: 0.3s;
+                @include mq(tablet-small) {
+                    padding-top: 0.8rem;
+                    padding-bottom: 0.8rem;
+                    margin-bottom: 2.4rem;
+                }
+                @include when-inside('.page-template-news') {
+                    border-color: $gray-clr
+                }
+                @include when-inside('.error404') {
+                    border-color: $gray-clr
+                }
+                &:hover {
+                    border-top: 1px solid $light-blue-clr;
+                    @include when-inside('.page-template-news') {
+                        border-top: 1px solid $light-blue-clr;
+                    }
+                    @include when-inside('.error404') {
+                        border-top: 1px solid $light-blue-clr;
+                    }
+                }
+            }
+        }
+        &__extra {
+            @include mq(tablet-small) {
+                display: flex;
+            }
+            &__item {
+                position: relative;
+                margin-bottom: 2.4rem;
+                padding-top: 0.8rem;
+                padding-bottom: 0.8rem;
+                transition: 0.3s;
+                @include mq(tablet-small, max) {
+                    border-top: 1px solid $black-clr;
+                    padding-top: 1.6rem;
+                    padding-bottom: 1.6rem;
+                    margin-bottom: 1.6rem;
+                }
+                @include mq(tablet-small) {
+                    margin-right: 4rem;
+                }
+                @include mq(tablet-small) {
+                    &::before {
+                      position: absolute;
+                      content: '';
+                      left: 0;
+                      bottom: 0.4rem;
+                      width: 0;
+                      opacity: 0;
+                      transition: 0.3s;
+                      border-top: 1px solid $black-clr;
+                    }
+                    &:hover {
+                      &::before {
+                        width: 100%;
+                        opacity: 1;
+                      }
+                    }
+                  }
+            }
+        }
+        &__menu {
+            display: none;
+            @include mq(tablet-small) {
+                display: flex;
+                align-items: center;
+            }
+            &__item {
+                @include mq(tablet-small, max) {
+                    margin-bottom: 2.4rem;
+                }
+                @include mq(tablet-small) {
+                    margin-right: 3rem;
+                }
+                a, h6 {
+                    font-size: 1rem;
+                    letter-spacing: 0.14rem;
+                    text-transform: uppercase;
+                    font-weight: 400;
+                    line-height: 1.2rem;
+                    @include when-inside('.page-template-news') {
+                        color: $gray-clr;
+                    }
+                    @include when-inside('.error404') {
+                        color: $gray-clr;
+                    }
+                }
+            }
+        }
+        &__copyright {
+            @include when-inside('.page-template-news') {
+                color: $gray-clr;
+            }
+            @include when-inside('.error404') {
+                color: $gray-clr;
+            }
+        }
+    }
+}

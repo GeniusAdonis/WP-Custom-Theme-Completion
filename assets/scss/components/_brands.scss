@@ -1,0 +1,43 @@
+.brands {
+    display: flex;
+    background-color: $black-clr;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    .container {
+        display: flex;
+        align-items: center;
+        margin: auto;
+        width: 100%;
+        align-items: flex-start;
+        @include mq(tablet-small, max) {
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+    }
+    &-title {
+        color: $gray-light-clr;
+    }
+    &-description {
+        color: $gray-clr;
+    }
+    &-item {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+        @include mq(tablet-small) {
+            gap: 3rem 4rem;
+        }
+        &__image {
+            display: flex;
+            justify-content: center;
+            img {
+                margin: auto;
+                opacity: 0.6;
+                @include mq(tablet-small) {
+                    max-width: 55%;
+                }
+            }
+        }
+    }
+}
